@@ -1,12 +1,6 @@
 rm(list=ls())
 
-#Integrantes del equipo
-#Hern醤dez Garc韆 Yesenia In閟
-#Mungu韆 Land韓 Luis
-#Ram韗ez Gu韟ar Brenda Jazm韓
-#Reyes Mart韓ez Samuel Joshua
-
-#C骴igo para valuar derivados europeos y digitales
+#C贸digo para valuar derivados europeos y digitales
 
 'Acomodar matriz'
 mover <- function(A){
@@ -102,7 +96,7 @@ cuentademercado <-function(arbolito,payoff,r,N,TTT){
   return(cuentademercado_tree)
 }
 
-'C骴igo para graficar el arbol'
+'C贸digo para graficar el arbol'
 my_BinomialTreePlot<-function (BinomialTreeValues,xlab,ylab,dx = -0.00025, dy = 0.004, cex = 1, 
                                digits = 2, ...) 
 {
@@ -119,7 +113,7 @@ my_BinomialTreePlot<-function (BinomialTreeValues,xlab,ylab,dx = -0.00025, dy = 
     x = rep(i, times = length(y)) + 0
     for (j in 1:length(x)) text(x[j] + dx, y[j] + dy, deparse(Tree[length(x) + 
                                                                      1 - j, i + 1]), cex = cex)
-    #Dibujar las l韓eas
+    #Dibujar las l铆neas
     y = (-i):i
     x = rep(c(i, i-1), times = 2 * i)[1:length(y)]
     lines(x, y, col = 2)
@@ -151,7 +145,7 @@ arbolbeta <- function(v) {
   return(arbolbeta)
 }
 
-'Funci髇 que devuelve los precios y los arboles'
+'Funci贸n que devuelve los precios y los arboles'
 valuacionderivado <- function(type,S1,r,u,d,N,TTT,K,valordigital=0) {
   q <- q_prob(r,u, d,N,TTT)
   x <- construyearbolpreciossub(S1,u,d,N)
@@ -167,8 +161,8 @@ valuacionderivado <- function(type,S1,r,u,d,N,TTT,K,valordigital=0) {
 #### d factor por el que baja el precio
 #### k es el precio strike
 #### r es la tasa libre de riesgo, tiene que ponerse en decimales
-#### N es el n鷐ero de pasos del 醨bol
-#### TTT es el vencimiento de la opci髇 en a駉s
+#### N es el n煤mero de pasos del 谩rbol
+#### TTT es el vencimiento de la opci贸n en a帽os
 #### valor digital (caso de opciones digitales)
 #### tipos: 'put europea plain vanilla'
 #### 'call europea plain vanilla'
